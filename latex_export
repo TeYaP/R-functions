@@ -1,0 +1,15 @@
+latex_export  <- function(object2export, file.name, file.caption=NULL){
+	align.vector <- rep("r", length=length(object2export[1,])+1)
+	align.vector[1] <- "l"
+    	print(xtable(object2export, align = align.vector,
+        	     		label = paste("tab:", file.name, sep = "", collapse = NULL),
+        	     		caption = file.caption),
+        	type = "latex",
+        	size="\\normalsize",
+        	caption.placement = "top",
+        	# sanitize.text.function = function(x) x,
+        	include.rownames=TRUE,
+        	include.colnames=TRUE,
+        	file = paste(file.name, ".tex", sep = "", collapse = NULL)
+        ) # end print
+} # end function
