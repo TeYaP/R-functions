@@ -1,0 +1,7 @@
+chrono <- function(computation) {
+	start.time <- Sys.time()
+	computation
+	end.time <- Sys.time()
+	time.difference <- end.time - start.time
+	return(time.difference)
+}
